@@ -74,7 +74,10 @@ output_schema:
   type: object
   properties:
       trackings:
-        type: array[object]
+        type: array
+        items:
+          type: object
+          additionalProperties: true
         label:
           en_US: Registered shipments
           zh_Hans: 已注册运单

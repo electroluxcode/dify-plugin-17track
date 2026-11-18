@@ -13,4 +13,7 @@ class GetQuotaTool(Tool):
         client = SeventeenTrackClient(
             self.runtime.credentials["seventeen_track_api_key"]
         )
-        yield self.create_json_message(client.get_quota())
+        result = client.get_quota()
+        for key, value in result.items():
+            yield self.create_variable_message(key, value)
+        yield self.create_json_message(result)

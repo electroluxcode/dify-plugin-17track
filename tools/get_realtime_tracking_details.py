@@ -20,4 +20,6 @@ class GetRealtimeTrackingDetailsTool(Tool):
         result = client.get_realtime_tracking_details(
             {"number": number, "cacheLevel": int(cache_level)}
         )
+        for key, value in result.items():
+            yield self.create_variable_message(key, value)
         yield self.create_json_message(result)

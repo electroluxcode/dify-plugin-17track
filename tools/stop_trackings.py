@@ -19,4 +19,6 @@ class StopTrackingsTool(Tool):
                 None, "Provide between 1 and 40 valid tracking numbers"
             )
         result = client.stop_trackings([{"number": number} for number in numbers])
+        for key, value in result.items():
+            yield self.create_variable_message(key, value)
         yield self.create_json_message(result)

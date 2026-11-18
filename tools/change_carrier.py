@@ -27,4 +27,6 @@ class ChangeCarrierTool(Tool):
                 for number in numbers
             ]
         )
+        for key, value in result.items():
+            yield self.create_variable_message(key, value)
         yield self.create_json_message(result)

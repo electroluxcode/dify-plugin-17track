@@ -17,4 +17,6 @@ class ListTrackingsTool(Tool):
             page_no=int(tool_parameters.get("page_no") or 0),
             package_status=tool_parameters.get("package_status") or None,
         )
+        for key, value in result.items():
+            yield self.create_variable_message(key, value)
         yield self.create_json_message(result)

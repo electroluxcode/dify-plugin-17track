@@ -32,4 +32,6 @@ class UpdateTrackingInfoTool(Tool):
         result = client.update_tracking_info(
             [{"number": number, "items": items} for number in numbers]
         )
+        for key, value in result.items():
+            yield self.create_variable_message(key, value)
         yield self.create_json_message(result)
