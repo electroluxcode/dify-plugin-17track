@@ -1,6 +1,6 @@
-from dify_plugin import DifyPlugin, DifyPluginEnv
+from dify_plugin import DifyPluginEnv, Plugin
 
-plugin = DifyPlugin(env=DifyPluginEnv(max_request_threads=20))
+plugin = Plugin(DifyPluginEnv(MAX_REQUEST_TIMEOUT=600))
 
 if __name__ == "__main__":
     plugin.run()

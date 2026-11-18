@@ -4,7 +4,16 @@ Cross-border e-commerce order tracking for 3500+ carriers with automatic status 
 
 Official API doc (11 endpoints): https://asset.17track.net/api/document/v2.4_zh/index.html
 
-## Tools (11)
+Source repository: https://github.com/electroluxcode/dify-plugin-17track
+
+## Setup
+
+1. Get a 17TRACK API key from [17TRACK API Settings](https://api.17track.net/admin/settings)
+   (free plan available).
+2. Install the plugin and authorize the credential with your API key. The key is sent as
+   the `17token` header and validated against the `getquota` endpoint on save.
+
+## Usage (11 tools)
 
 - **get_quota** — get the current tracking and email quota counters for the 17TRACK account
 - **register_trackings** — register up to 40 tracking numbers for automatic tracking by 17TRACK
@@ -18,13 +27,4 @@ Official API doc (11 endpoints): https://asset.17track.net/api/document/v2.4_zh/
 - **update_tracking_info** — update the metadata (tag, language, remark) of registered tracking numbers
 - **get_realtime_tracking_details** — query a single tracking number against carriers in real time
 
-## Credential
-
-17TRACK API key from [17TRACK API Settings](https://api.17track.net/admin/settings),
-sent in the `17token` header and validated against `getquota` on save.
-
-## Development
-
-```bash
-dify plugin package .   # package as .difypkg
-```
+All requests go to the official 17TRACK API (`https://api.17track.net/track/v2.4`).
