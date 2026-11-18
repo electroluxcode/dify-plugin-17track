@@ -1,10 +1,10 @@
-from dify_plugin import PluginProvider
+from dify_plugin import ToolProvider
 
 from tools.seventeentrack_client import SeventeenTrackClient, SeventeenTrackError
 
 
-class SeventeenTrackProvider(PluginProvider):
-    def validate_credentials(self, credentials: dict) -> None:
+class SeventeenTrackProvider(ToolProvider):
+    def _validate_credentials(self, credentials: dict) -> None:
         client = SeventeenTrackClient(credentials["seventeen_track_api_key"])
         try:
             client.get_quota()
