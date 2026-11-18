@@ -10,6 +10,44 @@ description:
     zh_Hans: 获取 17TRACK 账户当前的跟踪与邮件配额计数
   llm: Get the current tracking and email quota counters for the 17TRACK account. Returns total, used, remaining, today used and daily limit. Read-only and idempotent.
 parameters: []
+output_schema:
+  type: object
+  properties:
+      total:
+        type: number
+        label:
+          en_US: Total quota
+          zh_Hans: 总额度
+      used:
+        type: number
+        label:
+          en_US: Used quota
+          zh_Hans: 已用额度
+      remaining:
+        type: number
+        label:
+          en_US: Remaining quota
+          zh_Hans: 剩余额度
+      todayUsed:
+        type: number
+        label:
+          en_US: Used today
+          zh_Hans: 今日已用
+      dailyLimit:
+        type: number
+        label:
+          en_US: Daily registration limit (0 = unlimited)
+          zh_Hans: 每日注册上限(0 为不限)
+      freeEmailQuota:
+        type: number
+        label:
+          en_US: Free email quota
+          zh_Hans: 免费邮件配额
+      freeEmailQuotaUsed:
+        type: number
+        label:
+          en_US: Free email quota used
+          zh_Hans: 免费邮件配额已用
 extra:
   python:
     source: tools/get_quota.py

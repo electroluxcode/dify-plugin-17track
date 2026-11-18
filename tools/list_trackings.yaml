@@ -70,6 +70,19 @@ parameters:
       zh_Hans: 按当前主状态筛选
     llm_description: Optional filter by current main package status
     form: llm
+output_schema:
+  type: object
+  properties:
+      trackings:
+        type: array[object]
+        label:
+          en_US: Registered shipments
+          zh_Hans: 已注册运单
+      pagination:
+        type: object
+        label:
+          en_US: Pagination info
+          zh_Hans: 分页信息
 extra:
   python:
     source: tools/list_trackings.py

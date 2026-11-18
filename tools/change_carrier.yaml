@@ -32,6 +32,19 @@ parameters:
       zh_Hans: 新的 17TRACK 数字承运商代码(见 https://www.17track.net/zh-cn/carriers)
     llm_description: The new numeric 17TRACK carrier code to assign
     form: llm
+output_schema:
+  type: object
+  properties:
+      accepted:
+        type: array[object]
+        label:
+          en_US: Items accepted and processed by 17TRACK
+          zh_Hans: 被 17TRACK 接受的条目
+      rejected:
+        type: array[object]
+        label:
+          en_US: Items rejected by 17TRACK with error details
+          zh_Hans: 被拒绝的条目及原因
 extra:
   python:
     source: tools/change_carrier.py
