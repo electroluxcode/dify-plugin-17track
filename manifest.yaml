@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 type: plugin
 name: 17track
 label:
@@ -24,7 +24,7 @@ privacy: https://github.com/electroluxcode/dify-plugin-17track/blob/main/PRIVACY
 repo: https://github.com/electroluxcode/dify-plugin-17track
 contact: 3451613934@qq.com
 meta:
-  version: 0.0.1
+  version: 0.0.2
   arch:
     - amd64
     - arm64

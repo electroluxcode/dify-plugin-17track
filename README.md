@@ -28,3 +28,9 @@ Source repository: https://github.com/electroluxcode/dify-plugin-17track
 - **get_realtime_tracking_details** — query a single tracking number against carriers in real time
 
 All requests go to the official 17TRACK API (`https://api.17track.net/track/v2.4`).
+
+## Runtime screenshot
+
+Dify 工作流实际运行效果(输出变量含 JSON 结构化数据):
+
+![17TRACK 在 Dify 工作流中的运行截图](./_assets/dify-runtime.png)
